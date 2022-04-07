@@ -1,0 +1,9 @@
+- two pages index.html and whatlist.html
+  index = search page. calls to OMBD API 
+  with the title seached for and diplays search results.
+
+- Button to add to watchlist which
+  saves that data to local storage.
+
+- Whatlist.html loads and displays 
+  data from local storage.
