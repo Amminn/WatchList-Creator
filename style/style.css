@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  /* 1rem = 10px || 1.6rem 16px */
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1C1C1C;
+  padding-top: 8rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  min-height: 779px;
+  max-width: 550px;
+  width: 100%;
+  background-color: #121212;
+}
+
+.container {
+  max-width: 462px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  min-height: 208px;
+  height: 100%;
+  background: url("../images/background-image.png") no-repeat center/cover;
+  position: relative;
+  margin-bottom: 6rem;
+}
+
+header .title-side {
+  padding-top: 8.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .title-side h1 {
+  font-weight: 800;
+  font-size: 4.2rem;
+  line-height: 24px;
+}
+
+header .title-side a {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 20px;
+  margin-left: auto;
+}
+
+header .form-side {
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #2E2E2F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 91%;
+  height: 3.8rem;
+  width: 46.2rem;
+  border-radius: 6px;
+}
+
+header .form-side * {
+  height: 100%;
+}
+
+header .form-side img {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.8rem 0 1.3rem;
+}
+
+header .form-side input {
+  width: 300px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #A5A5A5;
+}
+
+header .form-side button {
+  background-color: #4B4B4B;
+  color: white;
+  width: 12rem;
+  border: none;
+  outline: none;
+  border-radius: 0 6px 6px 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+section.movies {
+  position: relative;
+  min-height: 571px;
+}
+
+section.movies .film {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.movies .film img {
+  width: 70px;
+  height: 61px;
+  display: block;
+  margin: 0 auto;
+}
+
+section.movies .film h2 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #2E2E2F;
+  margin-top: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  width: 28ch;
+}
+
+section.movies .film .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 1.8rem;
+  cursor: pointer;
+}
+
+section.movies .film .add img {
+  width: 18px;
+  height: 18px;
+  margin: 0 0.8rem;
+  -webkit-transform: translateY(-7%);
+          transform: translateY(-7%);
+}
+
+section.movies .movie {
+  margin-bottom: 3.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.movies .movie .image {
+  min-width: 99px;
+  height: 147px;
+  background-color: lightskyblue;
+  margin-right: 2.1rem;
+}
+
+section.movies .movie .text h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+}
+
+section.movies .movie .text h2 span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+section.movies .movie .text .duration-type {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+section.movies .movie .text .duration-type .add {
+  cursor: pointer;
+}
+
+section.movies .movie .text .duration-type span img {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  margin-right: .5rem;
+}
+
+section.movies .movie .text .duration-type > span:not(:last-child) {
+  margin-right: 1.8rem;
+}
+
+section.movies .movie .text .content {
+  font-size: 1.4rem;
+  line-height: 20px;
+  color: #A5A5A5;
+}
+
+hr {
+  height: 1.5px;
+  background-color: #2C2C2C;
+  border: none;
+  margin-bottom: 2.1rem;
+}
+/*# sourceMappingURL=style.css.map */
