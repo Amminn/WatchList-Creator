@@ -11,3 +11,11 @@
 This is my API KEY 1000 per day
 
 OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=eedb40e
+
+when i click on add the movie i can only save the id of that movie inside the movies array
+when i show the movie on the search i have to check when the id of the movie match the old watch movies id
+if it is show (added already) 
+before adding new one the programme should check if we already have the movie on the list
+
+when i open my watchlist then i can ask from the server to show me the data again based on the id of the movie
+when i click delete => added deleted or done | and delelte it for real or maybe make it disspear slowly

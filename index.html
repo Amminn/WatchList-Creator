@@ -1,98 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>WatchList Creator</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <header>
-            <div class="container">
-                <div class="title-side">
-                    <h1>Find your film</h1>
-                    <a href="./whatlist.html">My Watchlist</a>
-                </div>
-                <div class="form-side">
-                    <img src="./images/Search.png" alt="Search icon">
-                    <input type="text" placeholder="Blade Runner">
-                    <button>Search</button>
-                </div>
-            </div>
-        </header>
+      <header>
+        <div class="container">
+          <div class="title-side">
+            <h1>Find your film</h1>
+            <a href="./whatlist.html">My Watchlist</a>
+          </div>
+          <form autocomplete="off" class="form-side">
+            <img src="./images/Search.png" alt="Search icon" />
+            <input id="input" type="text" placeholder="Blade Runner" />
+            <button id="submit">Search</button>
+          </form>
+        </div>
+      </header>
 
-        <section class="movies">
-            <div class="container">
+      <section class="movies">
+        <div class="container">
+          <!-- when it is empty -->
 
-                <!-- when it is empty -->
+          <div class="film">
+            <img src="./images/film.png" alt="" />
+            <h2>Start exploring</h2>
+          </div>
 
-                <!-- <div class="film">
-                    <img src="./images/film.png" alt="">
-                    <h2>Start exploring</h2>
-                </div> -->
-
-                <!-- Unable to find results -->
-
-                <!-- <div class="film">
-                    <h2>Unable to find what you’re looking for. Please try another search.</h2>
-                </div> -->
-
-                <!-- the result of the search, list of movies -->
-                <article class="movie">
-                    <div class="image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="text">
-                        <h2>Blade Runner <span class="rate"><img src="./images/star.png" alt=""> 8.1</span></h2>
-                        <p class="duration-type">
-                            <span class="duration">116 min</span>
-                            <span class="type">Drama, Mystery, Sci-fi</span>
-                            <span class="add"><img src="./images/add.png" alt="">Watchlist</span>
-                        </p>
-                        <p class="content">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>
-                </article>
-
-                <hr>
-                
-                <article class="movie">
-                    <div class="image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="text">
-                        <h2>Blade Runner <span class="rate"><img src="./images/star.png" alt=""> 8.1</span></h2>
-                        <p class="duration-type">
-                            <span class="duration">116 min</span>
-                            <span class="type">Drama, Mystery, Sci-fi</span>
-                            <span class="add"><img src="./images/add.png" alt="">Watchlist</span>
-                        </p>
-                        <p class="content">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>
-                </article>
-
-                <hr>
-
-                <article class="movie">
-                    <div class="image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="text">
-                        <h2>Blade Runner <span class="rate"><img src="./images/star.png" alt=""> 8.1</span></h2>
-                        <p class="duration-type">
-                            <span class="duration">116 min</span>
-                            <span class="type">Drama, Mystery, Sci-fi</span>
-                            <span class="add"><img src="./images/add.png" alt="">Watchlist</span>
-                        </p>
-                        <p class="content">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
+         
+        </div>
+      </section>
     </main>
 
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
