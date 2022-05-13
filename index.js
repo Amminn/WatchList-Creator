@@ -6,7 +6,7 @@ let addBtns = ''
 let searchList = []
 let preLocalStorage = []
 // preLocalStorage = JSON.parse(window.localStorage.getItem('movies'));
-JSON.parse(window.localStorage.getItem('movies')) === null ? preLocalStorage.push('tt3896198') : preLocalStorage = JSON.parse(window.localStorage.getItem('movies'))
+JSON.parse(window.localStorage.getItem('movies')) === null ? [] : preLocalStorage = JSON.parse(window.localStorage.getItem('movies'))
 
 submitBtn.addEventListener('click', (e) => {
 	/* Prevent the form from reloading the page when submit */
@@ -22,31 +22,28 @@ submitBtn.addEventListener('click', (e) => {
 		const data = await response.json();
 
 		/* If there is a mistake */
-		if (data.Response == "False") {
-
-			input.value = "This movie is not found"
+		if (data.Response === "False") {
+			// input.value = "This movie is not found"
 			moviePlace.innerHTML = `
 				<div class="film">
 					<h2>Unable to find what you’re looking for. Please try another search.</h2>
 				</div>
 			`
-
-				/* If we get the data back */ 
-		} else if (data.Response == "True") {
+		/* If we get the data back */ 
+		} else {
 			moviePlace.innerHTML = ''
 			searchList = data.Search
 
-				/* Looping on the movies title to get all the info */
+			/* Looping on the movies title to get all the info */
 			for (const item of searchList) {
 
 				const resp = await fetch(`https://www.omdbapi.com/?i=${item.imdbID}&apikey=eedb40e`)
 				const secondData = await resp.json();  
 
-					/* Checking if the Plot has more than 133 letter, if it is show only 133 and add '...' in the end */
-
+				/* Checking whether the Plot has more than 133 letter, if it is show only 133 letter then add '...' in the end */
 				const content = secondData.Plot.length >= 133 ? secondData.Plot.substring(0, 133) + "..." : secondData.Plot
 
-					/* Rendering the movies */
+				/* Rendering the movies */
 				moviePlace.innerHTML += (`
 						<article class="movie" id="${secondData.imdbID}">
 						<!--  <p class="imdbID" style="display: none;">${secondData.imdbID}</p> -->
@@ -58,7 +55,7 @@ submitBtn.addEventListener('click', (e) => {
 								<p class="duration-type">
 									<span class="duration">${secondData.Runtime}</span>
 									<span class="type">${secondData.Genre}</span>
-									<span class="${preLocalStorage.includes(secondData.imdbID) ? '' : 'add'}" id="${secondData.imdbID}">${preLocalStorage.includes(secondData.imdbID) ? " " : "<img src='./images/add.png' alt=''>Watchlist"}</span>
+									<span class="${preLocalStorage.includes(secondData.imdbID) ? '' : 'add'}" id="${secondData.imdbID}">${preLocalStorage.includes(secondData.imdbID) ? "<span><img src='./images/done.png' alt=''>Added</span>" : "<img src='./images/add.png' alt=''>Watchlist"}</span>
 								</p>
 								<p class="content">${content}</p>
 							</div>
@@ -73,7 +70,7 @@ submitBtn.addEventListener('click', (e) => {
 				element.removeEventListener('click', adding)
 				let imbdID = element.id
 				element.innerHTML = "<span><img src='./images/done.png' alt=''>Added</span>"
-				preLocalStorage.includes(imbdID) ? console.log('this element is already added') : preLocalStorage.unshift(imbdID)
+				preLocalStorage.includes(imbdID) ? '' : preLocalStorage.unshift(imbdID)
 				
 				localStorage.removeItem('movies')
 				window.localStorage.setItem('movies', JSON.stringify(preLocalStorage))

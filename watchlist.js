@@ -8,24 +8,24 @@ async function render() {
     /* looping on all the movies of the list using their only imdbID */
     for (const item of movieList) {
         const resp = await fetch(`https://www.omdbapi.com/?i=${item}&apikey=eedb40e`)
-        const secondData = await resp.json();  
+        const movieDate = await resp.json();  
 
         /* Checking if the Plot has more than 133 letter, if it is show only 133 and add '...' in the end */
-        const content = secondData.Plot.length >= 133 ? secondData.Plot.substring(0, 133) + "..." : secondData.Plot
+        const content = movieDate.Plot.length >= 133 ? movieDate.Plot.substring(0, 133) + "..." : movieDate.Plot
 
         /* Rendering the movies with html css*/
         moviePlace.innerHTML += (`
-            <article class="movie" id="${secondData.imdbID}">
-            <!--  <p class="imdbID" style="display: none;">${secondData.imdbID}</p> -->
+            <article class="movie" id="${movieDate.imdbID}">
+            <!--  <p class="imdbID" style="display: none;">${movieDate.imdbID}</p> -->
                 <div class="image">
-                    <img src="${secondData.Poster}" alt="${secondData.Title}'s Poster">
+                    <img src="${movieDate.Poster}" alt="${movieDate.Title}'s Poster">
                 </div>
                 <div class="text">
-                    <h2>${secondData.Title} <span class="rate"><img src="./images/star.png" alt=""> ${secondData.imdbRating}</span></h2>
+                    <h2>${movieDate.Title} <span class="rate"><img src="./images/star.png" alt=""> ${movieDate.imdbRating}</span></h2>
                     <p class="duration-type">
-                        <span class="duration">${secondData.Runtime}</span>
-                        <span class="type">${secondData.Genre}</span>
-                        <span class="add" id="${secondData.imdbID}"><img src='./images/remove.png' alt=''>remove</span>
+                        <span class="duration">${movieDate.Runtime}</span>
+                        <span class="type">${movieDate.Genre}</span>
+                        <span class="add" id="${movieDate.imdbID}"><img src='./images/remove.png' alt=''>remove</span>
                     </p>
                     <p class="content">${content}</p>
                 </div>
