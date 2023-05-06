@@ -240,7 +240,21 @@ section.movies .movie .text h2 {
 section.movies .movie .text h2 span {
   font-size: 1.2rem;
   font-weight: 400;
-  margin-left: 1rem;
+  margin-left: 1.3rem;
+}
+
+section.movies .movie .text h2 span img {
+  width: 12px;
+}
+
+section.movies .movie .text h2 span:last-child {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 1rem;
 }
 
 section.movies .movie .text .duration-type {

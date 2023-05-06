@@ -1,6 +1,6 @@
 const moviePlace = document.querySelector(".movies .container");
 
-/* getting the movie list data from localstorage */
+/* getting the movie list data from localStorage */
 let movieList = JSON.parse(localStorage.getItem("movies"));
 
 /* Rendering the movies */
@@ -20,23 +20,33 @@ async function render() {
 
     /* Rendering the movies with html css*/
     moviePlace.innerHTML += `
-            <article class="movie" id="${movieDate.imdbID}">
-            <!--  <p class="imdbID" style="display: none;">${movieDate.imdbID}</p> -->
-                <div class="image">
-                  <img src="${movieDate.Poster}" alt="${movieDate.Title}'s Poster">
-                </div>
-                <div class="text">
-                    <h2>${movieDate.Title} <span class="rate"><img src="./images/star.png" alt=""> ${movieDate.imdbRating}</span></h2>
-                    <p class="duration-type">
-                      <span class="duration">${movieDate.Runtime}</span>
-                      <span class="type">${movieDate.Genre}</span>
-                      <span class="add" id="${movieDate.imdbID}"><img src='./images/remove.png' alt=''>remove</span>
-                    </p>
-                    <p class="content">${content}</p>
-                </div>
-            </article>
+          <article class="movie" id="${movieDate.imdbID}">
+          <!--  <p class="imdbID" style="display: none;">${movieDate.imdbID}</p> -->
+              <div class="image">
+                <img src="${movieDate.Poster}" alt="${movieDate.Title}'s Poster">
+              </div>
+              <div class="text">
+                  <h2>
+                    ${movieDate.Title}
+                    <span class="rate">
+                    <img src="./images/star.png" alt="star icon">
+                    ${movieDate.imdbRating}
+                    </span>
+                  </h2>
+                  <p class="duration-type">
+                    <span class="duration">${movieDate.Runtime}</span>
+                    <span class="type">${movieDate.Genre}</span>
+                    <span class="add" id="${movieDate.imdbID}">
+                      <img src='./images/remove.png' alt=''>
+                      remove
+                    </span>
+                  </p>
+                  <p class="content">${content}</p>
+              </div>
+          </article>
         `;
   }
+
   removeBtns = document.querySelectorAll(".add");
   removeBtns.forEach((element) => {
     element.addEventListener("click", function adding() {
@@ -77,7 +87,7 @@ movieList === null || movieList.length == 0
     <h2>Your watchlist is looking a little empty...</h2>
     <p class="add">
       <img src="./images/add.png" alt="" />
-      <a href="./index.html">Let’s add some movies!</a>
+      <a href="./index.html">Let's add some movies!</a>
     </p>
   </div>`)
   : render();
