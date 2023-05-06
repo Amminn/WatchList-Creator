@@ -1,6 +1,8 @@
 # Movie WatchList App
 The Movie WatchList app is a solo project built from scratch using HTML, SCSS, and JavaScript, based on a Figma design provided by Scrimba. With the help of the OMDb API, the application allows users to search for movies and add them to their watchList.
 
+Check the App live [here](https://amminn.github.io/WatchList-Creator/ "here")
+
 ## Features
 - Search for movies by title
 - Add movies to WatchList
